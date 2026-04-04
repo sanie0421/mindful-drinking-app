@@ -1,0 +1,12 @@
+{
+  "name": "maindful-drinking-app",
+  "compatibility_date": "2024-01-01",
+  "pages_build_output_dir": "./dist",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "maindful-drinking-db",
+      "database_id": "cfad411a-e970-48b2-9464-8dcff0409f92"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "maindful-drinking-app",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev --compatibility-date=2024-01-01 --d1=DB ./dist",
+    "build": "vite build && node -e \"const fs=require('fs');const r=JSON.parse(fs.readFileSync('dist/_routes.json'));r.exclude=['/icon-*.png','/manifest.json'];fs.writeFileSync('dist/_routes.json',JSON.stringify(r));\"",
+    "deploy": "npm run build && wrangler pages deploy ./dist",
+    "cf-typegen": "wrangler types"
+  },
+  "dependencies": {
+    "hono": "^4.6.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241022.0",
+    "@hono/vite-build": "^1.3.0",
+    "canvas": "^3.2.3",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0",
+    "wrangler": "^3.80.0"
+  }
+}
